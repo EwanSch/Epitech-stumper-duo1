@@ -9,7 +9,7 @@ CC		=	epiclang
 CFLAGS		=	-g -Wall -Werror -Wextra
 CPPFLAGS	=	-Iinclude
 
-NAME	=	mysh
+NAME	=	fractals
 SRC	=	src/main.c	\
 
 OBJ	=	$(SRC:%.c=%.o)
