@@ -1,0 +1,48 @@
+/*
+** EPITECH PROJECT, 2026
+** main
+** File description:
+** main
+*/
+
+#include "../include/my.h"
+#include "../include/stumper.h"
+
+
+int line_len(char *str)
+{
+    int i = 0;
+
+    for (; str[i] != '\0' || str[i] != '@'; i++);
+    return i;
+}
+
+void algo(char **av, int rep)
+{
+    int len = my_pow(line_len(av(2]) * rep, 2);
+    int cmpt = 0;
+    char **tab1 = my_str_to_word_array_delim(av[2], '@');
+    char **tab2 = my_str_to_word_array_delim(av[3], '@');
+    char **n_tab = malloc(sizeof(char *) * len + 1);
+
+    
+    n_tab[len] = NULL;
+    for (int i = 0; n_tab[i] != NULL; i++){
+        n_tab[i] = malloc(sizeof(char) * len);
+        n_tab[i][len - 1] = '\0';
+    }
+    for (int i = 0;  i < (rep * rep); i++){
+        for (int z = 0; z < rep; z++)
+            n_tab[z] = tab[]
+    }
+}
+
+int main(int ac, char **av)
+{
+    int rep = 0;
+
+    if (error_handling(ac, av))
+        return 84;
+    rep = string_to_int(av[1]);
+    printf("%d\n", rep);
+}
