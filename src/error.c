@@ -8,6 +8,15 @@
 #include "../include/my.h"
 #include "../include/stumper.h"
 
+void free_tab(char **tab)
+{
+    if (!tab)
+        return;
+    for (int i = 0; tab[i] != NULL; i++)
+        free(tab[i]);
+    free(tab);
+}
+
 static int line_break_verif(char **av, char c, int i)
 {
     if (c == '@')
@@ -38,6 +47,20 @@ static int letter_detect(char *str)
     return 0;
 }
 
+static int square_verif(char **av)
+{
+    char **tab = my_str_to_word_array_delim(av[2], '@');
+    int len = my_strlen(tab[0]);
+
+    for (int i = 1; tab[i] != NULL; i++)
+        if (len != my_strlen(tab[i])){
+            free_tab(tab);
+            return 1;
+        }
+    free_tab(tab);
+    return 0;
+}
+
 int error_handling(int ac, char **av)
 {
     if (ac != 4)
@@ -47,6 +70,8 @@ int error_handling(int ac, char **av)
     if (letter_detect(av[1]))
         return 1;
     if (arg_verif(av))
+        return 1;
+    if (square_verif(av))
         return 1;
     return 0;
 }
