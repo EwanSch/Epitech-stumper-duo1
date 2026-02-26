@@ -24,5 +24,4 @@
 #ifndef MY_STUMPER_H
     #define MY_STUMPER_H
 
-int error_handling(int ac, char **av);
 #endif

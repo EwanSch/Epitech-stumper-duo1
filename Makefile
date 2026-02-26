@@ -6,11 +6,12 @@
 ##
 
 CC		=	epiclang
-CFLAGS		=	-g -Wall -Werror -Wextra
+CFLAGS		=	-g -Wall
 CPPFLAGS	=	-Iinclude
 
 NAME	=	fractals
 SRC	=	src/main.c	\
+		src/error.c	\
 
 OBJ	=	$(SRC:%.c=%.o)
 
